@@ -11,7 +11,7 @@
 <!--Firebase Reference-->
     <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
     
-  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 </head>
 <body>
   <div class="container">
@@ -20,14 +20,43 @@
         <h2>Rock Paper Scissors</h2>
       </div>
       
+      <div class="row">
+          <div class="col-sm-12">
+      
 <!--section to enter name-->
-      <form id="name-form" >
+      <form id="name-form" style="text-align:center;">
         <label for="name-input"></label>
         <input type="text" id="name-input">     
-        <input id="add-name" type="submit" value="Submit">
+       <button class="btn btn-primary" id="submit-name" type="submit">Start</button>
       </form>
+          </div>
+          
+          </div>
       
-    <div class="row" 
+    <div class="row">
+      <div class="col-md-4">
+          <h3 class="waiting" id="player1" style="text-align:center;">Waiting for Player 1</h3>
+        </div>
+        
+        <div class="col-md-4" >
+            <h3 class="waiting" id="winner"></h3>
+        </div>
+        
+        <div class="col-md-4">
+          <h3 class="waiting" id="player2" style="text-align:center;">Waiting for Player 2</h3>
+        </div>        
+      </div>
+      
+      <div class="row">
+        <div class="col-md-12">
+            <p id="insert-text"></p>
+          </div>
+      </div>
+      
+      <input type="text" class="form-control" placeholder="Text input"> 
+      <button type="submit" class="btn btn-default">Submit</button>
+
+      
     
     
     
@@ -35,6 +64,8 @@
     
     
     </div>
+    <!-- JavaScript -->
+  <script src="assets/javascript/app.js"></script>
 
 </body>
 </html>
