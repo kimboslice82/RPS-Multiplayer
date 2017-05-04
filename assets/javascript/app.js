@@ -12,25 +12,29 @@ firebase.initializeApp(config);
 
 // Create a variable to reference the database.
 var database = firebase.database();
-var playerOneName = "";
-var playerTwoName = "";
+//var playerOneName = "";
+//var playerTwoName = "";
 
 //whent the user clicks the start button
-$("#submit-name").on("click", function() {
+$("#submit").on("click", function(event) {
     
     event.preventDefault();
     
-    playerOneName = $("#player1").val().trim();
-    playerTwoName = $("#player2").val().trim();
+    playerOneName = $("#name").val().trim();
+    //playerTwoName = $("#player2").val().trim();
     
-    console.log(playerOneName);
-    console.log(playerTwoName);
+    database.ref().push({
+         name: playerOneName,
+               
+			});
+});
 
-    return false;
-})
+database.ref().on("child_added", function(snapshot) {
+    console.log(snapshot.val().name);
+});
 
 //whent the user clicks the submit button to chat
-$("submit").on("click", function() {
+/*$("submit").on("click", function() {
     var playerOneChat = $("#player1").val().trim();
     var playerTwoChat = $("#player2").val().trim();
     
@@ -38,4 +42,4 @@ $("submit").on("click", function() {
     console.log(playerTwoChat);
 
     return false;
-})
+})*/
