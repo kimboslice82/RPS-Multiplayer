@@ -29,8 +29,10 @@ $("#submit").on("click", function(event) {
 			});
 });
 
-database.ref().on("child_added", function(snapshot) {
+database.ref().endAt().limitToLast(1).on("child_added", function(snapshot) {
     console.log(snapshot.val().name);
+    
+    $("#thisTable").prepend("<tr><td>" + snapshot.val().name + "</td></tr>");
 });
 
 //whent the user clicks the submit button to chat
